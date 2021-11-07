@@ -1,23 +1,30 @@
 #include <stdio.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
+#include <stdlib.h>
+
 
 int main(void) {
 	int vstup;
 	float a, b, c, obvod, max, pravouhlost, obsah, s;
 	int existuje;
 	pravouhlost; 
-	printf("Vlozte 1 pro trojuhelnik, 2 pro obdelnik, 3 pro kruznici: ");
+	printf("Zadejte: \n");
+	printf("1 pro trojuhelnik\n");
+	printf("2 pro obdelnik\n");
+	printf("3 pro kruznici\n ");
 	scanf("%d", &vstup);
+	system("cls");
 	if (vstup == 1)
 	{
 		//trojuhelnik
-		printf("Vlozte prvni stranu trojuhelniku: ");
+		printf("Zadejte prvni stranu trojuhelniku: ");
 		scanf("%f", &a);
-		printf("Vlozte druhou stranu trojuhelniku: ");
+		printf("Zadejte druhou stranu trojuhelniku: ");
 		scanf("%f", &b);
-		printf("Vlozte treti stranu trojuhelniku: ");
+		printf("Zadejte treti stranu trojuhelniku: ");
 		scanf("%f", &c);
-
+		system("cls");
 		//existuje
 		
 
@@ -54,15 +61,16 @@ int main(void) {
 			obsah = sqrt(s * (s - a) * (s - b) * (s - c));
 			printf("obsah trojuhelniku je: %f\n", obsah);
 		}
+
 	
 	}
 	else if (vstup == 2)
 	{
 		printf("zadejte prvi stranu: ");
-		scanf("%f", a);
+		scanf("%f", &a);
 		printf("zadejte druhou stranu: ");
-		scanf("%f", b);
-
+		scanf("%f", &b);
+		system("cls");
 		// ctverec
 
 		if (a == b)
@@ -71,14 +79,20 @@ int main(void) {
 		}
 
 		obvod = 2 * a + 2 * b;
-		printf("obvod obdelniku je: %f", obvod);
+		printf("obvod obdelniku je: %f\n", obvod);
 
 		obsah = a * b;
-		printf("obsah obdelniku je: %f", obsah);
+		printf("obsah obdelniku je: %f\n", obsah);
 	}
 	else
 	{
-
+		printf("zadejte polomer kruznice: ");
+		scanf("%f", &a);
+		system("cls");
+		double obvod1 = 2 * M_PI * a;
+		double obsah1 = M_PI * a * a;
+		printf("obvod kruznice je: %f\n", obvod1);
+		printf("obsah kruznice je: %f\n", obsah1);
 	}
 
 }
